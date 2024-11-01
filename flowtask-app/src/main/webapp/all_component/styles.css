@@ -881,3 +881,113 @@ form input {
 .login_after{
     background-color: #000000a6;
 }
+/* ================================================admin home===================================================================== */
+.admin-main-avatar{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.sub-menu-wrap{
+    position: absolute;
+    /* top:100%; */
+    right: 1%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s;
+}
+.sub-menu-wrap.open-wrap{
+    max-height: 420px;
+}
+.user-info .user-pics-info{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info .user-name-info{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.sub-menu-wrap .sub-menu{
+    background-color: #f5f3f3;
+    padding: 20px 20px 3px 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.sub-menu hr{
+    margin: 20px 0 20px;
+    /* border: 0px solid; */
+    width: 100%;
+    height: 1px;
+}
+.sub-menu .menu-section{
+    display: flex;
+    color: black;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.menu-section .menu-section-icon{
+    border-radius: 50%;
+    background-color: rgb(184, 177, 177);
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-section p{
+    font-size: 1.8rem;
+    transition: transform 0.2s;
+}
+.menu-section span{
+    font-size: 30px;
+    align-items: end;
+    position: absolute;
+    right: 30px;
+    font-weight: 300;
+    transition: transform 0.3s;
+}
+.menu-section:hover span{
+    transform: translateX(5px);
+}
+.menu-section:hover p{
+    font-weight: 500;
+}
+.manager-main-menu.active {
+    font-weight: 600;
+}
+.manager-menu-wrap{
+    position: absolute;
+    top:90%;
+    right: 4%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s;
+}
+.manager-menu-wrap.open-wrap{
+    max-height:200px;
+}
+.manager-menu{
+    background-color: #f5f3f3;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+}
+.manager-menu .manager-items{
+    padding-top: 20px;
+}
+.manager-menu .manager-items{
+    cursor: pointer;
+}

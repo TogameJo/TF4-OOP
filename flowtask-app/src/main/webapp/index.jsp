@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png"> 
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png">
     <!-- reset css -->
-    <%@include file="all_component/allCss.jsp" %>
+    <link rel="stylesheet" href="all_component/reset.css">
     <!-- styles -->
-    
+    <link rel="stylesheet" href="all_component/styles.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Trang chủ</title> 
+    <title>Home</title>
     <link rel="favicon" href="">
 </head>
 <body style="height: 2800px; overflow: auto;"  class="main_body">
