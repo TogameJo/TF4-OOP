@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,11 +46,16 @@
     </header>
     <div class="signin-box">
         <h1>Sign in</h1>
+        <c:if test="${not empty failedmsg}">
+            <p class="text-failed text-anotation">${failedmsg}</p>
+            <c:remove var="failedmsg" scope="session"/>
+        </c:if>
+
         <form action="LoginServlet" method="post">
-            <label for="">User Name</label>
-            <input type="text" name="username" id="username" placeholder="" required>
-            <label for="">Password</label>
-            <input type="password" name="password" id="password" placeholder="" required>
+            <label for="exampleInputUsername1">User Name</label>
+            <input type="text" class = "form-control" name="username" id="exampleInputUsername1" placeholder="" required ="required">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class = "form-control" name="password" id="exampleInputPassword1" placeholder="" required= "required">
             <input type="submit" value="Submit">
             <div class="homeback"><a href="index.jsp">Back to Home</a></div>
         </form>

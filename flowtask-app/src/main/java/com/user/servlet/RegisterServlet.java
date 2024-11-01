@@ -54,13 +54,13 @@ public class RegisterServlet extends HttpServlet {
 
             HttpSession session = request.getSession();
             if (!checkusername(username)) {
-                session.setAttribute("failedmsg", "Invalid username format.");
+                session.setAttribute("failedmsg", "Invalid username.");
                 response.sendRedirect("sign-up.jsp");
                 return;
             }
 
             if (!checkphone(phone)) {
-                session.setAttribute("failedmsg", "Invalid phone number format.");
+                session.setAttribute("failedmsg", "Invalid phone number.");
                 response.sendRedirect("sign-up.jsp");
                 return;
             }
@@ -84,7 +84,7 @@ public class RegisterServlet extends HttpServlet {
             us.setPassword(password);
 
             UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
-            boolean f = dao.userRegister(us); // Đăng ký tài khoản
+            boolean f = dao.userRegister(us); // check dki tk
 
             if (f) {
                 session.setAttribute("successmsg", "Registration successfully.");

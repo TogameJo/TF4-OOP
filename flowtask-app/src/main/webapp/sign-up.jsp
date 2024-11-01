@@ -47,7 +47,7 @@
     <div class="signup-box">
         <h1>Sign up</h1>
         <h4>It's only takes a minute</h4>
-        
+    <div class="ano-container">
         <c:if test="${not empty successmsg}">
         <!-- nếu thỏa mãn succes trong session -->
         <p class = "text-success text-anotation">${successmsg}</p>
@@ -59,7 +59,7 @@
         <c:remove var="failedmsg" scope="session"/>
         <!--xóa biến successmsg khỏi session sau khi hiển thị để không hiển thị lại sau khi tải lại trang. -->
         </c:if>
-        
+    </div>
         <form action="RegisterServlet" method="post">
             <label for="exampleInputUsername1">User Name</label>
             <input type="text" class = "form-control" name="username" id="exampleInputUsername1" placeholder="" required ="required">

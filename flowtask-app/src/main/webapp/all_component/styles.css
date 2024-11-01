@@ -683,8 +683,8 @@ a {
     overflow: auto;
 }
 .signup-box {
-    width: 360px;
-    height: 600px;
+    width: 36rem;
+    height: 59rem;
     margin: 20px auto 3px;
     background-color: white;
     border-radius: 10px;
@@ -701,19 +701,24 @@ a {
 
 .signup-box h4 {
     text-align: center;
-    padding-bottom: 30px;
 }
-.text-anotation{
+.ano-container {
+    margin-bottom: 20px; /* Thêm khoảng cách dưới thông báo */
+}
+
+.text-anotation {
+    width: 100%;
     text-align: center;
     font-size: 1.6rem;
-    position: absolute;
-    top:90px;
+    display: block; /* Đảm bảo nó hiển thị như một khối */
+    line-height:1.2;
+    margin-top:10px;
 }
-.text-success{
-	color:green;
+.text-success {
+    color: green;
 }
-.text-failed{
-	color: red;
+.text-failed {
+    color: red;
 }
 form {
     width: 300px;
@@ -797,6 +802,7 @@ form input {
     text-align: center;
     margin-top: 20px;
     font-size: 1.8rem;
+    padding-bototm:10px;
 }
 
 .homeback a {
@@ -826,7 +832,7 @@ form input {
 }
 .signin-box {
     width: 36rem;
-    height: 30rem;
+    height: 34rem;
     margin: 120px auto auto;
     background-color: #fff;
     border-radius: 1rem;
@@ -838,7 +844,6 @@ form input {
     font-weight: 500;
     text-align: center;
     padding-top: 1.5rem;
-    padding-bottom:30px;
 }
 
 .signin-box form {
