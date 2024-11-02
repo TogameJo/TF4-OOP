@@ -48,9 +48,9 @@
                     <li><a href="#job-mana" class="">Feedback</a></li>
                     <li><a href="#footer" class="">Contact</a></li>
                     <div>
-                        <li><a href="#!" class="manager-main-menu" >Manager</a></li>
+                        <li><a href="#!" class="manager-main-menu" onclick="toggleMana()">Manager</a></li>
                     </div>
-                    <div class="manager-menu-wrap" id="Manamenu" onclick="toggleMana()">
+                    <div class="manager-menu-wrap" id="Manamenu">
                         <div class="manager-menu">
                             <div class="manager-items">
                                 <a>Job Management</a>
