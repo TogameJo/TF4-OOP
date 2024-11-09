@@ -991,3 +991,92 @@ form input {
 .manager-menu .manager-items{
     cursor: pointer;
 }
+/* ============================================user management================================================================ */
+.search input[type="text"]{
+    height: 34px;
+    width: 250px;
+    min-width: 40px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.297);
+    border-radius: 4px;
+}
+.search{
+    position: relative;
+    right: 18%;
+    display: flex;
+    align-items: center;
+}
+.search a{
+    font-size: 25px;
+    cursor: pointer;
+}
+.header2{
+    height: 60px;
+    background-color: #086dff;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.header2 .home{
+    width: 100px;
+    gap: 12px;
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+}
+.header2 .home1{
+    margin-left: 100px;
+}
+.header2 .user{
+    margin-left: 80px;
+}
+.header2 .job{
+    margin-left: 80px;
+}
+.header2 .home a:hover{
+    width: 100%;
+    background-color: #fff;
+    color: black;
+    border-radius: 10px;
+}
+.header2 .home i{
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    align-self: center;
+}
+.header2 .home a{
+    font-size: 2rem;
+    text-wrap: nowrap;
+    align-self: end;
+    padding: 10px;
+    color: #fff;
+}
+.header2 .job{
+    margin-left: 30px;
+}
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #f4f4f4;
+}
+
+.user-table button {
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-table button:hover {
+    opacity: 0.8;
+}

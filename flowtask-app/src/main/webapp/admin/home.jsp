@@ -47,27 +47,8 @@
                     <li><a href="#about-us" class="">About</a></li>
                     <li><a href="#job-mana" class="">Feedback</a></li>
                     <li><a href="#footer" class="">Contact</a></li>
-                    <div>
-                        <li><a href="#!" class="manager-main-menu" onclick="toggleMana()">Manager</a></li>
-                    </div>
-                    <div class="manager-menu-wrap" id="Managermenu">
-                        <div class="manager-menu">
-                            <div class="manager-items">
-                                <a>User Management</a>
-                            </div>
-                            <div class="manager-items">
-                                <a>Job Management</a>
-                            </div>
-                        </div>
-                    </div>
+                    <li><a href="./management.jsp" class="manager-main-menu" >Manager</a></li>
                 </ul>
-            </nav>
-            <script>
-                let menu = document.getElementById("Managermenu");
-                function toggleMana(){
-                    menu.classList.toggle("open-wrap");
-                }
-            </script>
             </nav>
             <!-- btn -->
             <div class="action">
@@ -99,7 +80,7 @@
                             <span>></span>
                         </a>
 
-                        <a href="#!" class="menu-section">
+                        <a href="../sign-in.jsp" class="menu-section">
                             <div class="menu-section-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                             <p>Log Out</p>
                             <span>></span>

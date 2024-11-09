@@ -9,7 +9,8 @@ public class User {
 	private String email;
 	private String phonenum;
 	private String password;
-	
+	private boolean isActive;
+
 //	tao doi tuong user
 	public User() {
 		super();
@@ -45,9 +46,21 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean active) {
+		isActive = active;
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phonenum=" + phonenum + ", password="
-				+ password + "]";
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", phonenum='" + phonenum + '\'' +
+				", password='" + password + '\'' +
+				", isActive=" + isActive +
+				'}';
 	}
 }

@@ -71,17 +71,18 @@ public class RegisterServlet extends HttpServlet {
                 return;
             }
 
-            if (check == null) {
+            if (check == null || !check.equals("on")) {
                 session.setAttribute("failedmsg", "Please check Agree & Terms Condition.");
                 response.sendRedirect("sign-up.jsp");
                 return;
             }
-
+            
             User us = new User();
             us.setName(username);
             us.setEmail(email);
             us.setPhonenum(phone);
             us.setPassword(password);
+            us.setActive(true);
 
             UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
             boolean f = dao.userRegister(us); // check dki tk

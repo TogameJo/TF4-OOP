@@ -1,13 +1,13 @@
 package com.DAO;
 
+import com.entity.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.entity.User;
-
-//lớp thực hiện vai trò đăng ký
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 	private Connection conn;
 
 	public UserDAOImpl(Connection conn) {
@@ -15,28 +15,26 @@ public class UserDAOImpl implements UserDAO{
 		this.conn = conn;
 	}
 
-//	check dang ky
 	public boolean userRegister(User us) {
-	    boolean f = false;
-	    try {
-	    	String sql = "INSERT INTO user(username,email,phonenum,password) VALUES(?,?,?,?)";
-	    	PreparedStatement ps = conn.prepareStatement(sql);
-	        ps.setString(1, us.getName());
-	        ps.setString(2, us.getEmail());
-	        ps.setString(3, us.getPhonenum());
-	        ps.setString(4, us.getPassword());
-	        
-	        int i = ps.executeUpdate(); //neu insert thanh cong 1 hang se chuyen sang 1 khong thi se ve 0
-	        if(i==1) {
-	        	f=true; // Thành công nếu có 1 hàng được thêm
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	    return f;
+		boolean f = false;
+		try {
+			String sql = "INSERT INTO user(username,email,phonenum,password) VALUES(?,?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, us.getName());
+			ps.setString(2, us.getEmail());
+			ps.setString(3, us.getPhonenum());
+			ps.setString(4, us.getPassword());
+
+			int i = ps.executeUpdate(); //neu insert thanh cong 1 hang se chuyen sang 1 khong thi se ve 0
+			if(i==1) {
+				f=true; // Thành công nếu có 1 hàng được thêm
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
 	}
 
-//	check dang nhap
 	public User login(String username, String password) {
 		User us = null;
 		boolean f = false;
@@ -45,6 +43,7 @@ public class UserDAOImpl implements UserDAO{
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1,username);
 			ps.setString(2,password);
+//			ps.setBoolean(3, true);
 
 			ResultSet rs = ps.executeQuery();
 //			chứa ket qua cua cac truy van trong JDBC(select,...)
@@ -62,4 +61,66 @@ public class UserDAOImpl implements UserDAO{
 		}
 		return us;
 	}
+
+	@Override
+	public boolean updateUserStatus(int userId, boolean isActive) {
+		boolean isUpdated = false;
+		try {
+			String sql = "UPDATE user SET is_active = ? WHERE id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setBoolean(1, isActive);
+			ps.setInt(2, userId);
+
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				isUpdated = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isUpdated;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<User> users = new ArrayList<>();
+		try {
+			String sql = "SELECT * FROM user";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				User user = new User();
+				user.setId(rs.getInt("id"));
+				user.setName(rs.getString("username"));
+				user.setEmail(rs.getString("email"));
+				user.setPhonenum(rs.getString("phonenum"));
+				user.setPassword(rs.getString("password"));
+				user.setActive(rs.getBoolean("is_active"));
+				users.add(user);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return users;
+	}
+
+	@Override
+	public boolean deleteUser(int userId) {
+		boolean isDeleted = false;
+		String sql = "DELETE FROM user WHERE id = ?";
+
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setInt(1, userId);
+
+			int rowsAffected = ps.executeUpdate();
+			if (rowsAffected == 1) {
+				isDeleted = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isDeleted;
+	}
+
 }

@@ -100,7 +100,7 @@
                             <span>></span>
                         </a>
 
-                        <a href="#!" class="menu-section">
+                        <a href="sign-in.jsp" class="menu-section">
                             <div class="menu-section-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                             <p>Log Out</p>
                             <span>></span>
